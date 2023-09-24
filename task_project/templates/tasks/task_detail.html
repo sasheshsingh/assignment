@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1>Task Detail</h1>
+    <p><strong>Title:</strong> {{ object.title }}</p>
+    <p><strong>Description:</strong> {{ object.description }}</p>
+    <a href="{% url 'task-list' %}">Back to Task List</a>
+    <a href="{% url 'task-update' object.pk %}">Edit Task</a>
+    <form method="post" action="{% url 'task-delete' object.pk %}">
+        {% csrf_token %}
+        <button type="submit">Delete Task</button>
+    </form>
+</body>
+</html>

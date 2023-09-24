@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1>Task List</h1>
+    <ul>
+        {% for task in object_list %}
+            <li><a href="{% url 'task-detail' task.pk %}">{{ task.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'task-create' %}">Create New Task</a>
+</body>
+</html>
