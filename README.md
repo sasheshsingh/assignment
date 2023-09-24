@@ -60,7 +60,7 @@ python manage.py runserver
 
 ### Create Task
 
-![Create Task](screenshots/task_create.png)
+![Create Task](/screenshots/task_create.png)
 
 ### Edit Task
 
